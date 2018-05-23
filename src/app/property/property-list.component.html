@@ -1,3 +1,41 @@
-<p>
-  property-list works!
-</p>
+<div class="search">
+  <label for="search">Recherche : </label>
+
+  <input class="input-search" type="text" name="search" [(ngModel)]="search" placeholder="Entrez le nom d'une propriété">
+</div>
+
+<div class="property-list">
+  <div class="property-item" *ngFor="let property of properties | filter : search">
+    <div class="row">
+      <div class="infos col-8">
+        <div class="name"><span>Nom: </span> {{ property.name }}</div>
+
+        <div class="surface"><span>Surface: </span> {{ property.surface }}</div>
+
+        <div class="energy-class"><span>Classe énergétique: </span> {{ property.energyClass }}</div>
+
+        <div class="accessibility">
+          <span>Accessibilité: </span>
+
+          <span class="star-icon" *ngFor="let star of property.accessibility | stars"></span>
+        </div>
+
+        <div class="description"><span>Description: </span> {{ property.description }}</div>
+      </div>
+
+      <div class="image col-4">
+        <button class="btn-display" (click)="displayProperty(property)" *ngIf="!property.displayed">Voir la propriété</button>
+
+        <img class="property-picture" *ngIf="property.displayed" src="{{ property.imageUrl }}">
+
+        <div (click)="displayProperty(property)" *ngIf="property.displayed" class="close">X</div>
+      </div>
+    </div>
+
+    <div class="row bottom-row">
+      <div class="offset-10">
+        <button class="btn-edit" (click)="edit(property)">Éditer</button>
+      </div>
+    </div>
+  </div>
+</div>

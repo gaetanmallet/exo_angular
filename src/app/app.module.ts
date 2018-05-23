@@ -13,6 +13,8 @@ import { PropertyModule } from './property/property.module';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserModule } from './user/user.module';
+import { StateService } from './shared/services/state.service';
 
 @NgModule({
   imports: [
@@ -21,13 +23,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     InMemoryWebApiModule.forRoot(PropertyData),
     PropertyModule,
     AppRoutingModule,
+    UserModule
   ],
   declarations: [
     AppComponent,
     WelcomeComponent,
     PageNotFoundComponent
   ],
-  providers: [],
+  providers: [
+    StateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -26,7 +26,7 @@ export class PropertyService {
   getProperty(id: number): Observable<IProperty> {
       if (id === 0) {
           return Observable.of(this.initializeProperty());
-      };
+      }
       const url = `${this.baseUrl}/${id}`;
       return this.http.get(url)
           .map(this.extractData)
@@ -35,8 +35,8 @@ export class PropertyService {
   }
 
   deleteProperty(id: number): Observable<Response> {
-      let headers = new Headers({ 'Content-Type': 'application/json' });
-      let options = new RequestOptions({ headers: headers });
+      const headers = new Headers({ 'Content-Type': 'application/json' });
+      const options = new RequestOptions({ headers: headers });
 
       const url = `${this.baseUrl}/${id}`;
       return this.http.delete(url, options)
@@ -45,8 +45,8 @@ export class PropertyService {
   }
 
   saveProperty(property: IProperty): Observable<IProperty> {
-      let headers = new Headers({ 'Content-Type': 'application/json' });
-      let options = new RequestOptions({ headers: headers });
+      const headers = new Headers({ 'Content-Type': 'application/json' });
+      const options = new RequestOptions({ headers: headers });
 
       if (property.id === 0) {
           return this.createProperty(property, options);
@@ -71,7 +71,7 @@ export class PropertyService {
   }
 
   private extractData(response: Response) {
-      let body = response.json();
+      const body = response.json();
       return body || {};
   }
 
@@ -86,7 +86,7 @@ export class PropertyService {
           name: null,
           surface: null,
           accessibility: null,
-          energyClass:null,
+          energyClass: null,
           description: null,
           imageUrl: null
       };

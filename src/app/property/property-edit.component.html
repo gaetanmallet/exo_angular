@@ -1,3 +1,41 @@
-<p>
-  property-edit works!
-</p>
+<form class="row property-form" [formGroup]="propertyForm">
+  <div class="row name">
+    <label for="name">Nom: </label>
+
+    <input type="text" name="name" formControlName="name">
+  </div>
+
+  <div class="row surface">
+    <label for="surface">Surface: </label>
+
+    <input type="text" name="surface" formControlName="surface">
+  </div>
+
+  <div class="row accessibility">
+    <label for="accessibility">Accessibilité: </label>
+
+    <input type="number" min="0" max="5" name="accessibility" accessibility="accessibility">
+  </div>
+
+  <div class="row energy-class">
+    <label for="energy-class">Classe énergétique: </label>
+
+    <input type="text" name="energy-class" formControlName="energyClass">
+  </div>
+
+  <div class="row description">
+    <label for="description">Description: </label>
+
+    <textarea type="text" name="description" formControlName="description"></textarea>
+  </div>
+
+  <div class="row image">
+    <label for="image">Photo: </label>
+
+    <input type="file" name="image" formControlName="imageUrl">
+  </div>
+
+  <div class="row submit">
+    <button (click)="save()">Enregistrer</button>
+  </div>
+</form>

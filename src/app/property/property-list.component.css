@@ -1,0 +1,61 @@
+.input-search {
+  width: 400px;
+}
+.property-list {
+  height: calc(100vh - 125px);
+  overflow: scroll;
+}
+
+.property-item {
+  padding: 16px;
+  border-bottom: 1px solid grey;
+}
+
+.infos {
+  width: 75%;
+}
+
+.btn-display {
+  width: 100%;
+}
+
+.image {
+  width: 25%;
+  position: relative;
+}
+
+.property-picture {
+  width: 100%;
+  border: 1px solid grey;
+}
+
+.close {
+  position: absolute;
+  top: 2%;
+  right: 10%;
+  color: grey;
+  font-weight: bold;
+  padding: 3px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.star-icon {
+  color: #ddd;
+  font-size: 34px;
+  position: relative;
+  margin-left: 26px;
+}
+
+.star-icon:before {
+  color: #FDE16D;
+  content: '\2605';
+  position: absolute;
+  left: 0;
+  text-shadow: 0 0 2px rgba(0,0,0,0.7);
+}
+
+.btn-edit {
+  width: 100px;
+}
